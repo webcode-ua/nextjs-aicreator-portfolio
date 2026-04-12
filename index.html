@@ -4,8 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="VI1aBCWJEV5uLKuBiOqlHsymmNH3pVdrLBhWyfOLCcw" />
-    <title>Illya Pihovych | SEO Audit Specialist</title>
-    <meta name="description" content="Portfolio of Illya Pihovych, SEO Audit Specialist. Technical SEO, Audits, and Growth Strategies.">
+    <title id="pageTitle">Illya Pihovych | SEO Audit Specialist</title>
+    <meta name="description" id="pageDesc" content="Portfolio of Illya Pihovych, SEO Audit Specialist. I help businesses uncover deep technical SEO issues and unlock organic growth through data-driven audits.">
+    <meta name="robots" content="index, follow">
+    <!-- Replace with your actual domain when deploying -->
+    <link rel="canonical" href="https://seoanalysis.pp.ua/">
+    
+    <!-- Open Graph (Facebook/LinkedIn) -->
+    <meta property="og:type" content="profile">
+    <meta property="og:title" id="ogTitle" content="Illya Pihovych | SEO Audit Specialist">
+    <meta property="og:description" id="ogDesc" content="Portfolio of Illya Pihovych, SEO Audit Specialist. I help businesses uncover deep technical SEO issues and unlock organic growth.">
+    <meta property="og:url" content="https://seoanalysis.pp.ua/">
+    <meta property="og:image" content="https://seoanalysis.pp.ua/assets/hero.png">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" id="twTitle" content="Illya Pihovych | SEO Audit Specialist">
+    <meta name="twitter:description" id="twDesc" content="Portfolio of Illya Pihovych, SEO Audit Specialist. I help businesses uncover deep technical SEO issues and unlock organic growth.">
+    <meta name="twitter:image" content="https://seoanalysis.pp.ua/assets/hero.png">
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Illya Pihovych",
+      "jobTitle": "SEO Audit Specialist",
+      "url": "https://seoanalysis.pp.ua",
+      "image": "https://seoanalysis.pp.ua/assets/avatar.png",
+      "sameAs": [],
+      "description": "Helping businesses uncover deep technical SEO issues and unlock explosive organic growth through data-driven technical audits.",
+      "knowsAbout": ["Technical SEO", "Core Web Vitals", "International SEO", "Link Building", "SEO Audits"]
+    }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
@@ -360,6 +391,27 @@
         .status-msg.success { color: #4ade80; display: block; }
         .status-msg.error { color: #f87171; display: block; }
 
+        /* Footer */
+        .site-footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .site-footer a {
+            color: var(--accent-glow);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .site-footer a:hover {
+            color: var(--accent-glow-secondary);
+        }
+
     </style>
 </head>
 <body>
@@ -471,6 +523,14 @@
         </section>
     </div>
 
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p>
+            <span data-en="Website Developer" data-uk="Розробка сайту">Website Developer</span>: 
+            <a href="https://web-code.pp.ua" target="_blank" rel="noopener noreferrer">"WebCode"</a>
+        </p>
+    </footer>
+
     <!-- Language Toggle Script -->
     <script>
         const langToggle = document.getElementById('langToggle');
@@ -510,6 +570,20 @@
             placeholders.forEach(el => {
                 el.placeholder = el.getAttribute(`data-placeholder-${currentLang}`);
             });
+
+            // Update SEO Meta Tags dynamically
+            document.documentElement.lang = currentLang;
+            
+            const titleText = currentLang === 'en' ? 'Illya Pihovych | SEO Audit Specialist' : 'Ілля Пігович | Спеціаліст з SEO Аудиту';
+            const descText = currentLang === 'en' ? 'Portfolio of Illya Pihovych, SEO Audit Specialist. I help businesses uncover deep technical SEO issues and unlock organic growth through data-driven audits.' : 'Портфоліо Іллі Піговича, спеціаліста з SEO-аудиту. Допомагаю бізнесу знаходити глибокі технічні SEO-помилки та відкривати шлях до органічного росту.';
+            
+            document.getElementById('pageTitle').textContent = titleText;
+            document.getElementById('ogTitle').setAttribute('content', titleText);
+            document.getElementById('twTitle').setAttribute('content', titleText);
+            
+            document.getElementById('pageDesc').setAttribute('content', descText);
+            document.getElementById('ogDesc').setAttribute('content', descText);
+            document.getElementById('twDesc').setAttribute('content', descText);
         });
 
         // Contact Form Handling
