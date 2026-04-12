@@ -1,0 +1,11 @@
+{
+  "name": "seo-report",
+  "version": "1.0.0",
+  "description": "SEO Audit Portfolio",
+  "scripts": {
+    "push": "bash push-to-github.sh"
+  },
+  "keywords": [],
+  "author": "Illya Pihovych",
+  "license": "ISC"
+}
